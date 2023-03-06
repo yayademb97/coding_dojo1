@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>New Tree</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-between">
+        <h1>Arbortrary</h1>
+        <h3 style="margin-right: 150px;">
+            Welcome,{{user.first_name}}!
+        </h3>
+    </div>
+        <div class="header d-flex">
+            <h4 style="margin-right: 355px; justify-content: space-around;">A site to track randomly planted trees</h4>
+            <button><a href="/dashboard">Dashboard</a></button>
+            <button><a href="/logout" style="margin-right: 40px;">Logout</a></button>
+        </div>
+
+
+
+        {%for message in get_flashed_messages(category_filter=["arbortrary"])%}
+        <p class="text-danger">{{message}}</p>
+        {%endfor%}
+        <h1>Arbitrarily Plant a Tree</h1>
+        <form action="/arbortraries/create" method="post" class="row text-center ">
+            <div class="col-6">
+                <div class="form-group">
+                    <label style="font-weight: bold;">Species: </label>
+                    <input type="text" class="form-control" name="species">
+                </div>
+                <div class="form-group">
+                    <label style="font-weight: bold;">Location: </label>
+                    <input type="text" class="form-control" name="location">
+                </div>
+                <div class="form-group">
+                    <label style="font-weight: bold;">Reason: </label>
+                    <input type="text" class="form-control" name="reason">
+                </div>
+                <div class="form-group">
+                    <label style="font-weight: bold;">Date Planted </label>
+                    <input type="date" class="form-control" name="date_planted">
+                
+                </div>
+                <!-- <div class="form-group">
+                    
+                    <textarea name="plan" cols="70" rows="4"></textarea>
+                </div> -->
+                <div class="form-group">
+                    <button class="btn btn-primary">Plant</button>
+                <!-- </div>
+                <button><a href="/dashboard">Cancel</a></button>
+            </div> -->
+        </form>
+
+
+
+    </div>
+
+</body>
+
+</html>

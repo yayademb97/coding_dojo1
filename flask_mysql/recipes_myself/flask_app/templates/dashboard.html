@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, <span class="text-success">{{user.first_name}} --- {{user.last_name}} --- {{user.user_id}}</span>  You made it !! 😁😎🤩</h1>
+    <a href="/phones/new">+ Create</a>
+    <a href="/logout">LOGOUT</a>
+
+    <h3>All posted phones:</h3>
+
+    <table class="table ">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Order</th>
+            <th scope="col">Posted by</th>
+            <th scope="col">Actions</th>
+        </tr>
+        {% for phone in all_phones %}
+        <tr>
+            <td>{{phone.name}}</td>
+            <td>
+                {% if phone.order_now ==1%}
+                    YES
+                {% else %}
+                    NO
+                {%endif%}
+            </td>
+            <td>{{phone.owner.first_name}}</td>
+            <td>
+                <a href="/phones/show/{{phone.id}}">View Phone    |</a>
+                {% if phone.user_id == user.id%}
+                <a href="/phones/edit/{{phone.id}}">Edit    |</a>
+                <a href="/phones/delete/{{phone.id}}">Delete</a>
+                {% endif%}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+SELECT * FROM users_schema.users;
+
+INSERT INTO users(first_name, last_name, email)
+VALUES('Ousmane','Dembele','ousmanedembele@gmail.com'),
+      ('Leonel Andres','Messi','leomessi10@gmail.com'),
+      ('Robert','Lewandowski','robertlewi@gmail.com');
+SELECT * FROM names;
+
+SELECT * FROM names.email
+WHERE id = 3;
+
+UPDATE users SET last_name = "Pancakes"
+WHERE id = 3;
+
+DELETE FROM users
+WHERE id = 2;
+
+SELECT * FROM users.first_names;
+
+SELECT *
+FROM users
+ORDER BY first_name DESC;
+

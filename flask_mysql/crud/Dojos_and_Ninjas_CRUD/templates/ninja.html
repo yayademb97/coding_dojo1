@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja</title>
+    <!-- Linking-Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <form action="create/ninna" method="post" class="col-4 bg-dark p-4 my-5 text-light">
+        <h2 class="text-center text-primary">New Dojo</h2>
+        <div class="form-group">
+            <label for="dojo">Dojo:</label>
+            <select name="dojo_id" class="form-control">
+                {% for d in dojos %}
+                <option value="{{d.id}}">{{d.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputfirst_name" class="form-label">First Name: </label>
+            <input type="text" class="form-control" id="exampleInputfirst_name" aria-describedby="first_nameHelp">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputlast_name" class="form-label">Las Name: </label>
+            <input type="text" class="form-control" id="exampleInputlast_name">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="exampleInputage">Age: </label>
+            <input type="number" class="form-control" id="exampleInputage">
+        </div>
+        <input type="submit" value="Add Ninja" class="btn-primary btn-outline-dark">
+    </form>
+
+</body>
+
+</html>

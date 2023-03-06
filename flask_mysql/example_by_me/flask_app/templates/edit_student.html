@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Student Share</title>
+</head>
+
+<body>
+
+
+    <h3>
+        Edit Student!
+    </h3>
+    <a href="/students">back to students</a>
+    <a href="/logout">logout</a>
+
+    {%for message in get_flashed_messages(category_filter=["student"])%}
+    <p class="text-danger">{{message}}</p>
+    {%endfor%}
+
+    <form action="/students/edit" method="post" class="row text-center ">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="">Classe's Name</label>
+                <input type="text" class="form-control" name="name" value="{{recipe.name}}">
+            </div>
+            <div class="form-group">
+                <label for="">Description</label>
+                <input type="text" class="form-control" name="description" value="{{recipe.description}}">
+            </div>
+            <div class="form-group">
+                <label for="">On Line ?</label>
+                <div>
+                    <input type="radio" name="under_30" value="1" {% if recipe.under_30 == 1 %} checked {%endif%}>
+                    <label for="">Yes</label>
+                    <input type="radio" name="under_30" value="0" {% if recipe.under_30 == 0 %} checked {%endif%}>
+                    <label for="">NO</label>
+                </div>
+            </div>
+            <button class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+SELECT * FROM names_schema.names;
+
+INSERT INTO names(first_name, last_name, email)
+VALUES('Yaya', 'DEMBELE', 'yayadembele@gmail.com');
+
+INSERT INTO names(first_name, last_name, email)
+VALUES('Oussama', 'Hkimi', 'oussamahkimi@gmail.com'),
+      ( 'Ghada', 'Sassi', 'ghadasassi@gmail.com'),
+	  ( 'Mady Moussa', 'Dembele', 'madymoussadembele@gmail.com');
+
+UPDATE names SET first_name="Awatef"
+WHERE id = 3;
+
+DELETE from names
+WHERE id = 2;
+
+DELETE from names
+WHERE id = 7;
+
+
+DELETE from names
+WHERE id = 8;
+
+DELETE from names
+WHERE id = 2;
+
+DELETE from names
+WHERE id = 4;
+

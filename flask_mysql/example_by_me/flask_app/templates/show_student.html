@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>students</title>
+</head>
+
+<body>
+
+    <h3>
+        Welcome {{user.first_name}}
+    </h3>
+    <a href="/students">back to Students</a>
+    <a href="/logout">logout</a>
+
+    <h4>{{user.name}} ---- Posted By {{user.owner.first_name}}</h4>
+    <div class="card">
+        <h4>Classe's Name : {{user.class_name}}</h4>
+        {% if <student class="on_line">
+
+        </student> ==1%}
+        <h4>YES</h4>
+        {% else %}
+        <h4>NO</h4>
+        {%endif%}
+        <h4>On Line : {{user.on_line}}</h4>
+    </div>
+
+</body>
+
+</html>
