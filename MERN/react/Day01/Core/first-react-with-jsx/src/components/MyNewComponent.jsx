@@ -12,9 +12,10 @@ class MyNewComponent extends Component {
                     <li>Run a marathon</li>
                     <li>Feed the dogs</li>
 
+
                 </ul>
             </div>
-        )
+        );
     }
 }
 
