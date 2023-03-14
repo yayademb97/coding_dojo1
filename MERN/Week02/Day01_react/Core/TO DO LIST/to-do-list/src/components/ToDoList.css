@@ -1,0 +1,71 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.form {
+    margin-top: 70px;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form form input[type='text'] {
+    background-color: #ddd;
+    border: none;
+    border-radius: 6px;
+    width: 300px;
+    height: 50px;
+    font-size: 1.3rem;
+    padding-left: 20px;
+}
+
+.form form input[type='submit'] {
+    background-color: #1127ed;
+    color: #fff;
+    height: 55px;
+    width: 120px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    padding: 10px;
+}
+
+.tasks {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    justify-content: flex-end;
+}
+
+.task button {
+    width: 130px;
+    height: 45px;
+    background-color: #dc2626;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.task input[type='checkbox'] {
+    width: 25px;
+    height: 25px;
+    accent-color: #ddd;
+}
+
+.task p {
+    flex-grow: 1;
+}
